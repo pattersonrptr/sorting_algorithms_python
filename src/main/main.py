@@ -13,9 +13,7 @@ if __name__ == '__main__':
     vet = [i for i in random.sample(range(100), 10)]
     # vet = [171]
     print(vet)
-    # print(shell(vet))
     print( bucket(vet) )
     
-    print(vet)
 
 
