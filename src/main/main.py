@@ -3,17 +3,75 @@ Created on 22 de dez de 2016
 
 @author: patterson
 '''
+
+from pyqtgraph.python2_3 import xrange
 import random
+import time
 
 from sort.sort import bubble, insertion, selection, quick, merge, shell, heap, \
-    counting, radix, bucket
+    counting, radix, bucket, gnome, comb, cocktail
 
 
 if __name__ == '__main__':
-    vet = [i for i in random.sample(range(100), 10)]
-    # vet = [171]
-    print(vet)
-    print( bucket(vet) )
     
-
-
+    algorithms = [ 'Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
+                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail' ]
+    
+    while True:
+        print('\n\n\tSorting Algorithms\n\n')
+    
+        a_length = int(input('Tamanho do array a ser ordenado: '))
+        min = int(input('Menor número possível: '))
+        max = int(input('Maior número possível: '))
+        
+        vet = [random.randint(min, max) for r in xrange(a_length)]
+        
+        print('\nVetor gerado: ')
+        print(vet)
+        
+        print('\nEscolha um algoritmo de Ordenação: ')
+        for i, x in enumerate(algorithms):
+            print(i, ' - ', x)
+        op = input()
+        
+        if op == '0':
+            sort_alg = bubble
+        elif op == '1':
+            sort_alg = insertion
+        elif op == '2':
+            sort_alg = selection
+        elif op == '3':
+            sort_alg = quick
+        elif op == '4':
+            sort_alg = merge
+        elif op == '5':
+            sort_alg = shell
+        elif op == '6':
+            sort_alg = heap
+        elif op == '7':
+            sort_alg = counting
+        elif op == '8':
+            sort_alg = radix
+        elif op == '9':
+            sort_alg = bucket
+        elif op == '10':
+            sort_alg = gnome
+        elif op == '11':
+            sort_alg = comb
+        elif op == '12':
+            sort_alg = cocktail
+        else:
+            print('\nOpção inválida.')
+        
+        print('\nOrdenando pelo método ', algorithms[int(op)], '...')
+        print('\nVetor ordenado: ')
+        
+        ini = time.time()
+        print(sort_alg(vet))
+        fim = time.time()
+        print('\n\nTempo total gasto: ', fim-ini)
+        
+        
+        
+        
+        

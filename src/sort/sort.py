@@ -22,6 +22,7 @@ def bubble(nlist):
             if nlist[j] > nlist[j + 1]:
                 nlist[j + 1], nlist[j] = nlist[j], nlist[j + 1] 
                 exchanges = True
+                
     return nlist
     
 def insertion(nlist):
@@ -39,6 +40,7 @@ def insertion(nlist):
             nlist[j + 1] = nlist[j]
             j -= 1
         nlist[j + 1] = key
+        
     return nlist
 
 def selection(nlist):
@@ -53,8 +55,9 @@ def selection(nlist):
         for j in range(i + 1, size):
             if nlist[j] < nlist[lower]:
                 lower = j
-                print(nlist)
+
         nlist[i], nlist[lower] = nlist[lower], nlist[i]
+        
     return nlist
     
 def quick(nlist):
@@ -85,6 +88,7 @@ def merge(nlist):
             result.append(l.pop(0))
             
     result.extend(l + r)
+    
     return result
 
 def shell(nlist):
@@ -123,6 +127,7 @@ def heap(nlist):
     for end in range(size - 1, 0, -1):  
         nlist[end], nlist[0] = nlist[0], nlist[end]
         _max_heap(nlist, 0, end - 1)
+        
     return nlist
 
 def _max_heap(nlist, root, end):
@@ -195,48 +200,107 @@ def radix(aList):
         
     return nlist
 
-import math
+def bucket(aList, bucketSize=5):
+    nlist = list(aList)
+    size = len(nlist)
+    
+    if size < 2:
+        return nlist
 
-DEFAULT_BUCKET_SIZE = 5
+    minValue = min(nlist)
+    maxValue = max(nlist)
 
-def bucket(array, bucketSize=DEFAULT_BUCKET_SIZE):
-    if len(array) == 0:
-        return array
-
-    # Determine minimum and maximum values
-    minValue = array[0]
-    maxValue = array[0]
-    for i in range(1, len(array)):
-        if array[i] < minValue:
-            minValue = array[i]
-        elif array[i] > maxValue:
-            maxValue = array[i]
-
-    # Initialize buckets
     bucketCount = math.floor((maxValue - minValue) / bucketSize) + 1
     buckets = []
+    
     for i in range(0, bucketCount):
         buckets.append([])
 
-    # Distribute input array values into buckets
-    for i in range(0, len(array)):
-        buckets[math.floor((array[i] - minValue) / bucketSize)].append(array[i])
+    for i in range(0, size):
+        buckets[math.floor((nlist[i] - minValue) / bucketSize)].append(nlist[i])
 
-    # Sort buckets and place back into input array
-    array = []
+    nlist = []
     for i in range(0, len(buckets)):
-        insertion(buckets[i])
+        buckets[i] = insertion(buckets[i])
         for j in range(0, len(buckets[i])):
-            array.append(buckets[i][j])
+            nlist.append(buckets[i][j])
 
-    return array
+    return nlist
 
+def gnome(aList):
+    nlist = list(aList)
+    size = len(nlist)
+    
+    if size < 2:
+        return nlist
+    
+    pivot = 0
+    nlist_length = len(nlist) 
+    while pivot < nlist_length - 1:
+        if nlist[pivot] > nlist[pivot + 1]:
+            nlist[pivot + 1], nlist[pivot] = nlist[pivot], nlist[pivot + 1]
+            if pivot > 0:
+                pivot -= 2
+        pivot += 1
+        
+    return nlist
+    
+def comb(aList):
+    nlist = list(aList)
+    size = len(nlist)
+    
+    if size < 2:
+        return nlist
+    
+    gap = size
+    swaps = True
+    
+    while gap > 1 or swaps:
+        gap = max(1, int(gap / 1.25)) # Minimun gap is 1
+        swaps = False
+        
+        for i in range(size - gap):
+            j = i + gap
+    
+            if nlist[i] > nlist[j]:
+                nlist[i], nlist[j] = nlist[j], nlist[i]
+                swaps = True
+            print(nlist)
+    return nlist
+    
+def cocktail(aList):
+    nlist = list(aList)
+    size = len(nlist)
+    
+    if size < 2:
+        return nlist
+    
+    swapped = True
+    i = 0
+    j = size - 1
+    
+    while i < j and swapped:
+        for k in range(i, j):
+            if nlist[k] > nlist[k + 1]:
+                nlist[k], nlist[k + 1] = nlist[k + 1], nlist[k]
+                swapped = True
+        j -= 1
+        
+        if swapped:
+            swapped = False
+            for k in range(j, i, -1):
+                if nlist[k] < nlist[k - 1]:
+                    nlist[k], nlist[k - 1] = nlist[k - 1], nlist[k]
+                    swapped = True
+        
+        i += 1
+        
+        if not swapped:
+            return nlist
+            
     
     
-    
-    
-    
-    
+
     
     
     
