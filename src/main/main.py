@@ -54,39 +54,13 @@ if __name__ == '__main__':
             print(i, ' - ', x)
         op = input()
         
-        if op == '0':
-            sort_alg = bubble
-        elif op == '1':
-            sort_alg = insertion
-        elif op == '2':
-            sort_alg = selection
-        elif op == '3':
-            sort_alg = quick
-        elif op == '4':
-            sort_alg = merge
-        elif op == '5':
-            sort_alg = shell
-        elif op == '6':
-            sort_alg = heap
-        elif op == '7':
-            sort_alg = counting
-        elif op == '8':
-            sort_alg = radix
-        elif op == '9':
-            sort_alg = bucket
-        elif op == '10':
-            sort_alg = gnome
-        elif op == '11':
-            sort_alg = comb
-        elif op == '12':
-            sort_alg = cocktail
-        elif op == '13':
+        if op == '13':
             test_all_algoithms()
-            continue
+        elif int(op) > 13 or int(op) < 0:
+            print('Opção inválida.')
         else:
-            print('\nOpção inválida.')
-            
-        test_algoithm(int(op))
+            test_algoithm(int(op))
+        
             
             
         
