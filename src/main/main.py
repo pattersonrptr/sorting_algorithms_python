@@ -10,12 +10,32 @@ import time
 
 from sort.sort import bubble, insertion, selection, quick, merge, shell, heap, \
     counting, radix, bucket, gnome, comb, cocktail
+    
+    
+def test_all_algoithms():
+    for i in range(len(sort_methods) ):
+        test_algoithm(i)
+        
+        print('[Enter] para continuar!')
+        input()
+        
+def test_algoithm(op):
+    print('\nOrdenando pelo método ', algorithms[op], '...')
+    print('\nVetor ordenado: ')
+            
+    ini = time.time()
+    print(sort_methods[op](vet))
+    fim = time.time()
+    print('\n\nTempo total gasto: ', fim-ini)
 
 
 if __name__ == '__main__':
     
     algorithms = [ 'Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
-                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail' ]
+                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'Todos' ]
+    
+    sort_methods = [bubble, insertion, selection, quick, merge, shell, heap, counting, radix, bucket, gnome, cocktail, cocktail]
+    
     
     while True:
         print('\n\n\tSorting Algorithms\n\n')
@@ -60,16 +80,18 @@ if __name__ == '__main__':
             sort_alg = comb
         elif op == '12':
             sort_alg = cocktail
+        elif op == '13':
+            test_all_algoithms()
+            continue
         else:
             print('\nOpção inválida.')
+            
+        test_algoithm(int(op))
+            
+            
         
-        print('\nOrdenando pelo método ', algorithms[int(op)], '...')
-        print('\nVetor ordenado: ')
         
-        ini = time.time()
-        print(sort_alg(vet))
-        fim = time.time()
-        print('\n\nTempo total gasto: ', fim-ini)
+        
         
         
         

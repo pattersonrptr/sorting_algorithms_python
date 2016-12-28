@@ -265,7 +265,7 @@ def comb(aList):
             if nlist[i] > nlist[j]:
                 nlist[i], nlist[j] = nlist[j], nlist[i]
                 swaps = True
-            print(nlist)
+ 
     return nlist
     
 def cocktail(aList):
