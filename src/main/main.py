@@ -16,17 +16,17 @@ def test_all_algoithms():
     for i in range(len(sort_methods) ):
         test_algoithm(i)
         
-        print('[Enter] para continuar!')
+        print('Press [Enter] to continue!')
         input()
         
 def test_algoithm(op):
-    print('\nOrdenando pelo método ', algorithms[op], '...')
-    print('\nVetor ordenado: ')
+    print('\nSorting by ', algorithms[op], ' method...')
+    print('\nOrdered array: ')
             
     ini = time.time()
     print(sort_methods[op](vet))
     fim = time.time()
-    print('\n\nTempo total gasto: ', fim-ini)
+    print('\n\nTotal time spent: ', fim-ini)
 
 
 if __name__ == '__main__':
@@ -40,16 +40,16 @@ if __name__ == '__main__':
     while True:
         print('\n\n\tSorting Algorithms\n\n')
     
-        a_length = int(input('Tamanho do array a ser ordenado: '))
-        min = int(input('Menor número possível: '))
-        max = int(input('Maior número possível: '))
+        a_length = int(input('Size of the array to be sorted: '))
+        min = int(input('Smallest possible number: '))
+        max = int(input('Greater possible number: '))
         
         vet = [random.randint(min, max) for r in xrange(a_length)]
         
-        print('\nVetor gerado: ')
+        print('\nOrdered array: ')
         print(vet)
         
-        print('\nEscolha um algoritmo de Ordenação: ')
+        print('\nChoose a Sort Algorithm.: ')
         for i, x in enumerate(algorithms):
             print(i, ' - ', x)
         op = input()
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         if op == '13':
             test_all_algoithms()
         elif int(op) > 13 or int(op) < 0:
-            print('Opção inválida.')
+            print('Invalid option.')
         else:
             test_algoithm(int(op))
         
