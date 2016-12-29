@@ -41,8 +41,9 @@ if __name__ == '__main__':
         print('\n\n\tSorting Algorithms\n\n')
     
         a_length = int(input('Size of the array to be sorted: '))
-        min = int(input('Smallest possible number: '))
-        max = int(input('Greater possible number: '))
+        
+        minimun = int(input('Smallest possible number: '))
+        maximun = int(input('Greater possible number: '))
         
         vet = [random.randint(min, max) for r in xrange(a_length)]
         
