@@ -151,7 +151,7 @@ def counting(alist):
     if size < 2:
         return nlist
     
-    m = min(nlist)# Para poder ordenar números negativos
+    m = min(nlist) 
     k = max(nlist) - m
 
     counter = [0] * ( k + 1 )

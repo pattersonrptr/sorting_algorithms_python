@@ -34,7 +34,7 @@ if __name__ == '__main__':
     algorithms = [ 'Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
                    'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'Todos' ]
     
-    sort_methods = [bubble, insertion, selection, quick, merge, shell, heap, counting, radix, bucket, gnome, cocktail, cocktail]
+    sort_methods = [bubble, insertion, selection, quick, merge, shell, heap, counting, radix, bucket, gnome, comb, cocktail]
     
     
     while True:
