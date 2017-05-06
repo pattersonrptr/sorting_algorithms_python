@@ -1,6 +1,6 @@
 <h1>sorting_algorithms_python</h1>
 <br>
-Algoritmos de ordenação implementados em Python.
+Sort algorithms implemented in Python.
 <br><br><br>
 Bubble<br>
 Inseetion<br>
