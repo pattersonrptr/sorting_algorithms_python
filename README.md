@@ -3,7 +3,7 @@
 Sort algorithms implemented in Python.
 <br><br><br>
 Bubble<br>
-Inseetion<br>
+Insertion<br>
 Selection<br>
 Quick<br>
 Merge<br>
