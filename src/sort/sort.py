@@ -70,6 +70,7 @@ def quick(nlist):
     pivot = nlist[0]
     lr = [x for x in nlist     if x <  pivot] # lower 
     gt = [x for x in nlist[1:] if x >= pivot] # greater
+    
     return quick(lr) + [pivot] + quick(gt)
 
 def merge(nlist):
