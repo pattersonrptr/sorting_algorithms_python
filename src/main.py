@@ -34,7 +34,7 @@ def test_algoithm(op):
 if __name__ == '__main__':
     
     algorithms = [ 'Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
-                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'Todos' ]
+                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'All' ]
     
     sort_methods = [bubble, insertion, selection, quick, merge, shell, heap, counting, radix, bucket, gnome, comb, cocktail]
     
