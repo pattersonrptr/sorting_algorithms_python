@@ -1,17 +1,9 @@
-<h1>sorting_algorithms_python</h1>
-<br>
-Sort algorithms implemented in Python.
-<br><br><br>
-Bubble<br>
-Insertion<br>
-Selection<br>
-Quick<br>
-Merge<br>
-Shell<br>
-Heap<br>
-Counting<br>
-Radix<br>
-Bucket<br>
-Gnome<br>
-Comb<br>
-Cocktail<br>
+# Sorting Algorithms in Python
+
+
+This is just a demonstration of the implementation of some sorting algorithms using Python. There are implementations of
+sorting in Python's standard library that are much better for performance reasons. 
+When I wrote these codes I was learning Python and I wanted to do some exercises to improve my Python skills and then 
+since I was taking Data Structures classes in college I implemented the algorithms in Python, I already knew  the most 
+well-known sort algorithms, but I ended up getting myself excited and learning a few more as was the case with Comb, 
+Gnome Cocktail and Shell Sort.

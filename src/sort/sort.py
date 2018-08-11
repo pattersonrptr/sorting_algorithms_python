@@ -14,15 +14,18 @@ def bubble(nlist):
     if size <= 1:
         return nlist
     
-    exchanges = True
+    swapped = True
     
     for i in range(size):
-        if not exchanges: break
-        exchanges = False
+        if not swapped:
+            break
+
+        swapped = False
+
         for j in range(size - i):
             if nlist[j] > nlist[j + 1]:
-                nlist[j + 1], nlist[j] = nlist[j], nlist[j + 1] 
-                exchanges = True
+                nlist[j + 1], nlist[j] = nlist[j], nlist[j + 1]
+                swapped = True
                 
     return nlist
 
