@@ -23,3 +23,11 @@ The following algorithms were implemented:
 - Quick
 - Radix
 - Shell
+
+The program shows the execution times of each algorithm, it is possible to create a random vector of integers and test 
+it with all the algorithms for comparison purposes. It is nice to note that the difference in execution times of each 
+algorithm grows as you use larger vectors. Small vectors are ordered quickly by any of these algorithms with a small 
+time difference between them, but by increasing the vector sizes, it is seen that the more advanced algorithms like 
+Quick, Merge, Bucket, Heap and Shell go absurdly better than the others.
+
+
