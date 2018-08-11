@@ -20,7 +20,8 @@ def test_all_algoithms():
         
         print('Press [Enter] to continue!')
         input()
-        
+
+
 def test_algoithm(op):
     print('\nSorting by ', algorithms[op], ' method...')
     print('\nOrdered array: ')
@@ -33,12 +34,11 @@ def test_algoithm(op):
 
 if __name__ == '__main__':
     
-    algorithms = [ 'Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
-                   'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'All' ]
+    algorithms = ['Bubble', 'Insertion', 'Selection', 'Quick', 'Merge',
+                  'Shell', 'Heap', 'Counting', 'Radix', 'Bucket', 'Gnome', 'Comb', 'Cocktail', 'All']
     
     sort_methods = [bubble, insertion, selection, quick, merge, shell, heap, counting, radix, bucket, gnome, comb, cocktail]
-    
-    
+
     while True:
         print('\n\n\tSorting Algorithms\n\n')
     
@@ -52,7 +52,8 @@ if __name__ == '__main__':
         print('\nOriginal array: ')
         print(vet)
         
-        print('\nChoose a Sort Algorithm.: ')
+        print('\nChoose a Sort Algorithm: ')
+
         for i, x in enumerate(algorithms):
             print(i, ' - ', x)
         op = input()
@@ -63,14 +64,3 @@ if __name__ == '__main__':
             print('Invalid option.')
         else:
             test_algoithm(int(op))
-        
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        

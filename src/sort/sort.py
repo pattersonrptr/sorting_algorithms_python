@@ -1,8 +1,9 @@
-'''
+"""
 Created on 22 de dez de 2016
 
 @author: patterson
-'''
+"""
+
 import math
 
 
@@ -24,6 +25,7 @@ def bubble(nlist):
                 exchanges = True
                 
     return nlist
+
     
 def insertion(nlist):
     nlist = list(nlist)
@@ -43,6 +45,7 @@ def insertion(nlist):
         
     return nlist
 
+
 def selection(nlist):
     nlist = list(nlist)
     size = len(nlist)
@@ -59,6 +62,7 @@ def selection(nlist):
         nlist[i], nlist[lower] = nlist[lower], nlist[i]
         
     return nlist
+
     
 def quick(nlist):
     nlist = list(nlist)
@@ -68,10 +72,11 @@ def quick(nlist):
         return nlist
     
     pivot = nlist[0]
-    lr = [x for x in nlist     if x <  pivot] # lower 
-    gt = [x for x in nlist[1:] if x >= pivot] # greater
+    lr = [x for x in nlist if x < pivot]    # lower
+    gt = [x for x in nlist[1:] if x >= pivot]   # greater
     
     return quick(lr) + [pivot] + quick(gt)
+
 
 def merge(nlist):
     if len(nlist) < 2:
@@ -79,8 +84,8 @@ def merge(nlist):
     
     result, mid = list(), len(nlist) // 2
     
-    l = merge(nlist[:mid]) # left
-    r = merge(nlist[mid:]) # right
+    l = merge(nlist[:mid])  # left
+    r = merge(nlist[mid:])  # right
     
     while (len(l) > 0) and (len(r) > 0):
         if l[0] > r[0]:
@@ -91,6 +96,7 @@ def merge(nlist):
     result.extend(l + r)
     
     return result
+
 
 def shell(nlist):
     nlist = list(nlist)
@@ -115,6 +121,7 @@ def shell(nlist):
         
     return nlist
 
+
 def heap(nlist):
     nlist = list(nlist)
     size = len(nlist)
@@ -131,6 +138,7 @@ def heap(nlist):
         
     return nlist
 
+
 def _max_heap(nlist, root, end):
     while True:
         child = root * 2 + 1
@@ -144,7 +152,8 @@ def _max_heap(nlist, root, end):
             root = child
         else:
             break
-        
+
+
 def counting(alist):
     nlist = list(alist)
     size = len(nlist)
@@ -169,6 +178,7 @@ def counting(alist):
             
     return nlist
 
+
 def radix(aList):
     nlist = list(aList)
     size = len(nlist)
@@ -178,15 +188,15 @@ def radix(aList):
     
     RADIX = 10
     maxLength = False
-    tmp , placement = -1, 1
+    tmp, placement = -1, 1
  
     while not maxLength:
         maxLength = True
-        buckets = [list() for i in range( RADIX )]
+        buckets = [list() for i in range(RADIX)]
  
-        for  i in nlist:
+        for i in nlist:
             tmp = int(i / placement)
-            buckets[int(tmp % RADIX)].append( i )
+            buckets[int(tmp % RADIX)].append(i)
             if maxLength and tmp > 0:
                 maxLength = False
  
@@ -200,6 +210,7 @@ def radix(aList):
         placement *= RADIX
         
     return nlist
+
 
 def bucket(aList, bucketSize=5):
     nlist = list(aList)
@@ -228,6 +239,7 @@ def bucket(aList, bucketSize=5):
 
     return nlist
 
+
 def gnome(aList):
     nlist = list(aList)
     size = len(nlist)
@@ -245,7 +257,8 @@ def gnome(aList):
         pivot += 1
         
     return nlist
-    
+
+
 def comb(aList):
     nlist = list(aList)
     size = len(nlist)
@@ -268,7 +281,8 @@ def comb(aList):
                 swaps = True
  
     return nlist
-    
+
+
 def cocktail(aList):
     nlist = list(aList)
     size = len(nlist)
@@ -298,19 +312,3 @@ def cocktail(aList):
         
         if not swapped:
             return nlist
-            
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
